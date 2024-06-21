@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: rgba(128,128,128,0.5);
+    }
+    .div1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    #div1{
+        padding: 30px 50px;
+        border-radius: 25px;
+        background-color: beige;
+    }
+    
+</style>
+<body>
+   <div class="div1">
+   <div id="div1">
+    <div for="red">red</div>
+    <input type="range" name="" id="red" min="0" max="255" oninput="fun(this.value)">
+    <div for="green">green</div>
+    <input type="range" name="green" id="green" min="0" max="255" oninput="fun(this.value)">
+    <div for="blue">blue</div>
+    <input type="range" name="blue" id="blue" min="0" max="255" oninput="fun(this.value)">
+    <div for="alpha">alpha</div>
+    <input type="range" name="alpha" id="alpha" min="0" max="10" oninput="fun(this.value)">
+   </div>
+   <h2 id="h2" onchange="fun(a)">rgba(128,128,128,0.5)</h2>
+</div>
+    <script>
+        color="rgb";
+        function ch(a){
+           red=document.getElementById("red").value;
+           green=document.getElementById("green").value;
+           blue=document.getElementById("blue").value;
+           alpha=document.getElementById("alpha").value;  
+           mix=[color+"("+red,green,blue,alpha/10+")"];
+           return mix;
+        }
+        function fun(a){
+            document.getElementById("h2").innerHTML=ch(a);
+            document.body.style.backgroundColor=ch(a);
+        }
+    </script>
+</body>
+</html>
