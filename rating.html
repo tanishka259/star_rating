@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<style>
+    body{
+        background-color: lightblue;
+    }
+       #div1{
+        position: relative;
+        top: 250px;
+        left: 40%;
+        display: inline-block;
+        padding: 30px;
+        border-radius: 30px;
+       }
+
+    i{
+        font-size: xx-large;
+    }
+</style>
+<body>
+   <div style="background-color: blue;" id="div1">
+    <img src="smile.png" alt="" id="img1" height="100" style="margin: 0px 30px;">
+    <div>
+    <span class="x a"><i class="bi bi-star-fill"></i></span>
+    <span class="x1 a"><i class="bi bi-star-fill"></i></span>
+    <span class="x2 a"><i class="bi bi-star-fill"></i></span>
+    <span class="x3 a"><i class="bi bi-star-fill"></i></span>
+    <span class="x4 a"><i class="bi bi-star-fill"></i></span>
+    </div>
+    </div>
+   <script>
+      let ele = document.querySelectorAll('.a');
+      ele.forEach((value,index)=>{
+
+       value.addEventListener('click',(a)=>{
+        
+        ele.forEach((value)=>{
+            value.style.color="black";
+        });
+
+        for(let i=0;i<=index;i++){
+            ele[i].style.color='yellow';
+        }
+
+        if(index==0){
+            document.getElementById('img1').src='sad.png'
+        }
+        if(index==1){
+            document.getElementById('img1').src='confused.png'
+        }
+        if(index==2){
+            document.getElementById('img1').src='smile.png'
+        }
+        if(index==3){
+            document.getElementById('img1').src='emoji.png'
+        }
+        if(index==4){
+        document.getElementById('img1').src='star.png'
+        }
+       })
+   
+    })
+
+   </script>
+
+</body>
+</html>
