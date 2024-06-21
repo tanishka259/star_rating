@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            background-color: gray;
+            display: inline-block;
+            padding: 20px;
+            border-radius: 20px;
+            width: 400px;
+            height: 400px;
+        }
+        #a1,#a2,#a3,#a4{
+            display: flex;
+        }
+        #div2{
+              text-align: right;
+              background-color: lightblue;
+              padding: 10px;
+              margin: 10px 10px 20px 10px;
+              border-radius: 5px;
+              font-family: 'Times New Roman', Times, serif;
+              font-size: xx-large;
+        }
+        .a{
+            background-color: whitesmoke;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: xx-large;
+            width: 70px;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .a2{
+            background-color: rgb(250, 210, 66);
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" >
+        <div id="div2">0</div>
+        <div id="a1">
+            <div class="a">7</div>
+            <div class="a">8</div>
+            <div class="a">9</div>
+            <div class="a">/</div>
+        </div>
+        <div id="a2">
+            <div class="a">4</div>
+            <div class="a">5</div>
+            <div class="a">6</div>
+            <div class="a">*</div>
+        </div>
+        <div id="a3">
+            <div class="a">1</div>
+            <div class="a">2</div>
+            <div class="a">3</div>
+            <div class="a">-</div>
+        </div>
+        <div id="a4">
+            <div class="a">0</div>
+            <div class="a">C</div>
+            <div class="a">+</div>
+            <div class="a a2">=</div>
+        </div>
+    </div>
+    <script>
+                
+        let tot = "";
+        let ele1 = document.getElementById('div2');
+        let ele = document.querySelectorAll('.a');
+       
+        ele.forEach((value,index)=>{
+        value.addEventListener('click',(a)=>{
+        x=a.target.innerHTML;
+            
+        if(x!='C' && x!='='){
+                tot +=x;
+            }
+            if(x=='C'){
+                tot="0";
+            }
+
+            if(x=='='){
+                tot=eval(tot);
+            }
+
+            ele1.innerHTML=tot;
+        
+       })
+   
+    })
+    </script>
+</body>
+</html>
